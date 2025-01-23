@@ -1,0 +1,6 @@
+.qtcreator/
+.DS_Store
+__pycache__
+minheart.pyproject
+minheart.pyproject.user
+imagenes/
