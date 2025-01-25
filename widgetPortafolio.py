@@ -14,6 +14,9 @@ class widgetProyecto(QWidget):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
+        self.imagen = imagen
+
+
         # Configuración de tamaño y política
         self.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
         self.setMinimumHeight(250)  # Ajusta este valor según el tamaño que necesites
@@ -28,12 +31,9 @@ class widgetProyecto(QWidget):
         self.ui.widget_descripcion.setText(str(descripcion))
         self.ui.widget_imagen.setFixedSize(200, 200)  # Ajusta el tamaño de la imagen
 
-        # Usa una imagen simple para probar
-        imagen = "imagenes/fondo_cuatro.png"
-
-        if imagen:
-            print(f"Intentando cargar la imagen desde: {imagen}")
-            pixmap = QPixmap(imagen)
+        if self.imagen:
+            print(f"Intentando cargar la imagen desde: {self.imagen}")
+            pixmap = QPixmap(self.imagen)
             if pixmap.isNull():
                 print("Error al cargar la imagen. La ruta podría ser incorrecta.")
             else:
@@ -52,7 +52,6 @@ class widgetProyecto(QWidget):
 
     def on_selection_changed(self):
         selected_item = self.combo_box.currentText()
-        # self.label.setText(f'Elemento seleccionado: {selected_item}')
 
 
 

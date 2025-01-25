@@ -107,6 +107,9 @@ color: rgb(255, 255, 255);</string>
     <property name="styleSheet">
      <string notr="true">border-radius: 5px;  /* Bordes redondeados */</string>
     </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
     <property name="readOnly">
      <bool>false</bool>
     </property>

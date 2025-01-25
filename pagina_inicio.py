@@ -9,12 +9,6 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt
 import os
 
-# Se importo el archivo del databse
-sys.path.append(os.path.abspath("/Users/claudia/Desktop/app_minheart/api"))
-#from api.database import conectar_db
-
-PYTHONPATH="/Users/claudia/Desktop/app_minheart/api"
-
 # Important:
 # You need to run the following command to generate the ui_form.py file
 #     pyside6-uic form.ui -o ui_form.py, or
@@ -34,6 +28,8 @@ from widgetPortafolio import widgetProyecto
 from qasync import QEventLoop
 import asyncio
 
+# Se declara una variable con el link que vamos a mandar la info.
+url = "http://127.0.0.1:5000"
 
 class pagina_inicio(QMainWindow):
     def __init__(self, nombre_user= "", client_id=None, parent=None):
@@ -113,7 +109,6 @@ class pagina_inicio(QMainWindow):
 
 ############### MÉTODOS ###############
 
-
     # Método para editar la foto de perfil
     def editar_perfil(self):
         try:
@@ -136,7 +131,7 @@ class pagina_inicio(QMainWindow):
                     files = {"foto": (os.path.basename(buscar_archivo), file, "image/jpeg")}
                     data = {"usuario": self.nombre_user}
 
-                    response = requests.post("http://127.0.0.1:5000/api/items/uploads", files=files, data=data)
+                    response = requests.post(url+"/api/items/uploads", files=files, data=data)
 
                     if response.status_code == 200:
                         pixmap = QPixmap(buscar_archivo)
@@ -171,7 +166,7 @@ class pagina_inicio(QMainWindow):
                 print("No hay usuario válido para cargar la foto")
                 return
 
-            response = requests.get(f"http://127.0.0.1:5000/api/items/downloads/{self.nombre_user}")
+            response = requests.get(f"{url}/api/items/downloads/{self.nombre_user}")
 
             if response.status_code == 200:
                 # Crear un QPixmap desde los datos de la imagen

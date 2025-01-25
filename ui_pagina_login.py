@@ -54,6 +54,7 @@ class Ui_pagina_login(object):
         self.password.setEnabled(True)
         self.password.setGeometry(QRect(270, 280, 250, 21))
         self.password.setStyleSheet(u"border-radius: 5px;  /* Bordes redondeados */")
+        self.password.setEchoMode(QLineEdit.EchoMode.Password)
         self.password.setReadOnly(False)
         self.boton_login = QPushButton(self.centralwidget)
         self.boton_login.setObjectName(u"boton_login")

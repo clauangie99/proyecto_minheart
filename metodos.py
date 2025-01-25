@@ -11,16 +11,8 @@ import aiofiles # Hay que descargarlo
 
 from PySide6.QtWidgets import QApplication, QFileDialog
 
-# Se importo el archivo del databse
-sys.path.append(os.path.abspath("/Users/claudia/Desktop/app_minheart/api"))
-#from api.database import conectar_db
-
-PYTHONPATH="/Users/claudia/Desktop/app_minheart/api"
-# This Python file uses the following encoding: utf-8
-
 # Se declara una variable con el link que vamos a mandar la info.
 url = "http://127.0.0.1:5000"
-
 
 # Esta función elimina el token
 def eliminar_token():

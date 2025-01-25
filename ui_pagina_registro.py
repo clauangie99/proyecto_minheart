@@ -47,6 +47,7 @@ class Ui_pagina_registro(object):
         self.password_1.setObjectName(u"password_1")
         self.password_1.setGeometry(QRect(460, 280, 250, 21))
         self.password_1.setStyleSheet(u"border-radius: 5px;  /* Bordes redondeados */")
+        self.password_1.setEchoMode(QLineEdit.EchoMode.Password)
         self.password_1.setReadOnly(False)
         self.label_2 = QLabel(pagina_registro)
         self.label_2.setObjectName(u"label_2")
@@ -88,6 +89,7 @@ class Ui_pagina_registro(object):
         self.password_2.setObjectName(u"password_2")
         self.password_2.setGeometry(QRect(460, 350, 250, 21))
         self.password_2.setStyleSheet(u"border-radius: 5px;  /* Bordes redondeados */")
+        self.password_2.setEchoMode(QLineEdit.EchoMode.Password)
         self.password_2.setReadOnly(False)
         self.label_6 = QLabel(pagina_registro)
         self.label_6.setObjectName(u"label_6")
@@ -116,10 +118,10 @@ class Ui_pagina_registro(object):
         self.telefono.setObjectName(u"telefono")
         self.telefono.setGeometry(QRect(60, 350, 250, 21))
         self.telefono.setStyleSheet(u"border-radius: 5px;  /* Bordes redondeados */")
-        self.label_9 = QLabel(pagina_registro)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(260, 410, 271, 20))
-        self.label_9.setStyleSheet(u"font: \"Lucida Grande\";\n"
+        self.error = QLabel(pagina_registro)
+        self.error.setObjectName(u"error")
+        self.error.setGeometry(QRect(260, 410, 271, 20))
+        self.error.setStyleSheet(u"font: \"Lucida Grande\";\n"
 "color: rgb(255, 0, 0);")
 
         self.retranslateUi(pagina_registro)
@@ -140,6 +142,6 @@ class Ui_pagina_registro(object):
         self.label_6.setText(QCoreApplication.translate("pagina_registro", u"Nombre(s):", None))
         self.label_7.setText(QCoreApplication.translate("pagina_registro", u"Apellidos:", None))
         self.label_8.setText(QCoreApplication.translate("pagina_registro", u"Tel\u00e9fono:", None))
-        self.label_9.setText("")
+        self.error.setText("")
     # retranslateUi
 
